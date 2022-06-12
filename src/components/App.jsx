@@ -22,25 +22,22 @@ function App() {
   function takeValue(e) {
     const btnValue = e.target.value.toString();
     if (inputedValues === "") {
-      if ("1234567890".indexOf(btnValue) === -1) {
-        return setInputedValues(""); // Ensure the first input is a number
-      } else {
-        return btnValue === "C"
-          ? setInputedValues("")
-          : btnValue === "="
-          ? calculate()
-          : setInputedValues((prevVal) => {
-              return prevVal + btnValue;
-            });
+      if ("1234567890".indexOf(btnValue) !== -1) {
+        // If what got passed in is a number:
+        return setInputedValues(btnValue);
       }
+    } else if (btnValue === "C") {
+      setInputedValues("");
+      setAnswer(0);
     } else {
-      return btnValue === "C"
-        ? setInputedValues("")
-        : btnValue === "="
-        ? calculate()
-        : setInputedValues((prevVal) => {
-            return prevVal + btnValue;
-          });
+      if (btnValue === "=") {
+        calculate();
+      } else {
+        setInputedValues(
+           btnValue
+        );
+        console.log(inputedValues);
+      }
     }
   }
 
