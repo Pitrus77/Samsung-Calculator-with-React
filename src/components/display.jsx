@@ -27,7 +27,7 @@ function Display(props) {
           <div><StraightenOutlinedIcon sx={{ fontSize: 17 }} /></div>
           <div><CalculateOutlinedIcon sx={{ fontSize: 17 }} /></div>
         </div>
-        <div className="right"><BackspaceOutlinedIcon sx={{ fontSize: 16 }} /></div>
+        <div className="right"><BackspaceOutlinedIcon onClick={props.delete} sx={{ fontSize: 16 }} /></div>
       </div>
     </header>
   );

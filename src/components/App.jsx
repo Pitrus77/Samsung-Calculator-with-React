@@ -29,9 +29,13 @@ function App() {
       setInputedValues("");
     } else {
       return btnValue === "="
-        ? setInputedValues(answer)
+        ? setInputedValues(answer.toString())
         : setInputedValues((prevVal) => prevVal + btnValue);
     }
+  }
+
+  function deleteLastItem() {
+    setInputedValues(inputedValues.substring(0, inputedValues.length - 1));
   }
 
   return (
@@ -40,6 +44,7 @@ function App() {
         answer={answer}
         value={inputedValues}
         set={setInputedValues}
+        delete={deleteLastItem}
       />
       <Buttons onclick={takeValue} />
     </div>
