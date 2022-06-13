@@ -4,40 +4,34 @@ import Buttons from "./buttons";
 
 function App() {
   const [inputedValues, setInputedValues] = useState("");
-  const [answer, setAnswer] = useState(0);
+  // const [answer, setAnswer] = useState(0);
+  let answer;
 
-  function updateDisplayValue(e) {
-    setInputedValues(e.target.value);
-    console.log(inputedValues);
-    calculate();
+  try {
+    const checkAnswer = inputedValues.replace("%", "*0.01")
+    // eslint-disable-next-line
+    answer = eval(checkAnswer);
+  } catch (error) {
+    answer = 0
   }
-
-  function calculate() {
-    try {
-      // eslint-disable-next-line
-      setAnswer(eval(inputedValues));
-    } catch (error) {}
-  }
-
+  
   function takeValue(e) {
-    const btnValue = e.target.value.toString();
+    let btnValue = e.target.value.toString();
+    
     if (inputedValues === "") {
       if ("1234567890".indexOf(btnValue) !== -1) {
         // If what got passed in is a number:
         return setInputedValues(btnValue);
+      } else {
+        return;
       }
     } else if (btnValue === "C") {
+      answer = 0;
       setInputedValues("");
-      setAnswer(0);
     } else {
-      if (btnValue === "=") {
-        calculate();
-      } else {
-        setInputedValues(
-           btnValue
-        );
-        console.log(inputedValues);
-      }
+      return btnValue === "="
+        ? setInputedValues(answer)
+        : setInputedValues((prevVal) => prevVal + btnValue);
     }
   }
 
@@ -46,7 +40,7 @@ function App() {
       <Display
         answer={answer}
         value={inputedValues}
-        changed={updateDisplayValue}
+        set={setInputedValues}
       />
       <Buttons onclick={takeValue} />
     </div>
