@@ -1,5 +1,5 @@
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   background-color: #485037;
 }
 
@@ -21,12 +21,14 @@ button {
 .run {
   text-align: right;
 }
+
 .runtime {
   margin: 30px 10px 50px;
   color: #fff;
   max-width: 250;
   height: 1.5rem;
 }
+
 .runtime input {
   background-color: black;
   border: none;
@@ -37,6 +39,7 @@ button {
   min-height: 50px;
   font-size: 1.5rem;
 }
+
 .run .result {
   margin: 60px 10px 20px;
   color: #7c7878;
@@ -44,56 +47,88 @@ button {
 
 .display {
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-inline: 10px;
 }
+
 .display .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .display .left > :first-child {
   color: #7c7878;
 }
+
 .display .left div {
+  cursor: pointer;
   margin: 4px;
 }
 
-.calc {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.display .left div:nth-child(2) {
+  margin-inline: 20px;
 }
+
+.display .right {
+  color: limegreen;
+}
+
+.calc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .calc::before {
   content: "";
   top: 0;
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: rgba(66, 70, 65, 0.3647058824);
+  background-color: #4246415d;
   margin: 10px 0;
 }
+
 .calc-item {
   font-size: 1.5rem;
   text-align: center;
   width: 50px;
   line-height: 50px;
   aspect-ratio: 1;
-  background-color: rgba(51, 56, 50, 0.2);
+  background-color: #33383233;
   border-radius: 50%;
   margin: 4px;
   cursor: pointer;
 }
+
 .calc .green {
   color: limegreen;
 }
+
 .calc .red {
   color: #ca2f2f;
 }
+
 .calc .white {
   color: #fff;
 }
+
 .calc .green-white {
   background-color: limegreen;
   color: #fff;
-}/*# sourceMappingURL=main.css.map */
+}
+/*# sourceMappingURL=main.css.map */

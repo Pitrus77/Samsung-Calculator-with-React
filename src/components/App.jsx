@@ -4,7 +4,6 @@ import Buttons from "./buttons";
 
 function App() {
   const [inputedValues, setInputedValues] = useState("");
-  // const [answer, setAnswer] = useState(0);
   let answer;
 
   try {

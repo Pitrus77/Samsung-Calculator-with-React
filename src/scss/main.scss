@@ -56,8 +56,16 @@ button {
       color: #7c7878;
     }
     div {
+      cursor: pointer;
       margin: 4px;
+
+      &:nth-child(2){
+        margin-inline: 20px;
+      }
     }
+  }
+  .right{
+    color: limegreen;
   }
 }
 

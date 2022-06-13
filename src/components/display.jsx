@@ -23,11 +23,11 @@ function Display(props) {
       </div>
       <div className="display">
         <div className="left">
-          <div><AccessTimeOutlinedIcon /></div>
-          <div><StraightenOutlinedIcon /></div>
-          <div><CalculateOutlinedIcon /></div>
+          <div><AccessTimeOutlinedIcon sx={{ fontSize: 17 }} /></div>
+          <div><StraightenOutlinedIcon sx={{ fontSize: 17 }} /></div>
+          <div><CalculateOutlinedIcon sx={{ fontSize: 17 }} /></div>
         </div>
-        <div className="right"><BackspaceOutlinedIcon /></div>
+        <div className="right"><BackspaceOutlinedIcon sx={{ fontSize: 16 }} /></div>
       </div>
     </header>
   );
