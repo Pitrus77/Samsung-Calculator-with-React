@@ -35,7 +35,7 @@ function App() {
   }
 
   function deleteLastItem() {
-    setInputedValues(inputedValues.substring(0, inputedValues.length - 1));
+    setInputedValues(prev => prev.substring(0, prev.length - 1));
   }
 
   return (
